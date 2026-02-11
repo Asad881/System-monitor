@@ -1,0 +1,12 @@
+
+services:
+  system-sentinel:
+    build: .
+    container_name: production-monitor
+    environment:
+      - MONITOR_NAME=${MONITOR_NAME:-Default-Sentinel}
+      - ALERT_THRESHOLD=${ALERT_THRESHOLD:-10}
+      - INTERVAL=${INTERVAL:-5}
+    volumes:
+      - ./logs:/app/logs
+    restart: always
