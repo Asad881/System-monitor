@@ -19,7 +19,7 @@ jobs:
           username: ubuntu
           key: ${{ secrets.KEY }}
           script: |
-          cd System-monitor
-          git pull origin main
-          docker-compose up -d --build
+            cd System-monitor
+            git pull origin main
+            docker-compose up -d --build
 
