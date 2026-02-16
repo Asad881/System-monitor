@@ -22,7 +22,7 @@ timestamp=$(date -Is)
 ram=$(free -h | grep "Mem" | awk '{print $2}')
 disk=$(df / -h | awk 'NR==2 {print $5}' | tr -d "%")
 INTERVAL=${INTERVAL:-10}
-disk_alert=10
+disk_alert=95
 
 if [ $disk -gt $disk_alert ]; then
 printf "{\"INTERVAL\": \"$INTERVAL\",\"Monitor Name\": \"$MONITOR_NAME\",\"timestamp:\" \"$timestamp\",\"ram:\" \"$ram\",\"disk:\" \"$disk\" \"Status:\" \"CRITICAL\"}\n |" tee -a /app/logs/monitor.log
