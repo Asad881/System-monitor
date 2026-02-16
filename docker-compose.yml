@@ -4,9 +4,9 @@ services:
     build: .
     container_name: production-monitor
     environment:
-      - MONITOR_NAME=${MONITOR_NAME:-SUPER-SERVER-V2}
-      - ALERT_THRESHOLD=${ALERT_THRESHOLD:-95}
-      - INTERVAL=${INTERVAL:-5}
+      - MONITOR_NAME=SUPER-SERVER-V2
+      - ALERT_THRESHOLD=95
+      - INTERVAL=5
     volumes:
       - ./logs:/app/logs
     restart: always

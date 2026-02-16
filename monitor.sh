@@ -9,9 +9,6 @@ exit 0
 
 trap cleanup SIGINT SIGTERM
 
-MONITOR_NAME=${MONITOR_NAME:- "Defualt-Sentinel"}
-
-ALERT_THERSHOLD=${ALERT_THERSHOLD:- 10}
 
 
 while true ;do
