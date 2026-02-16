@@ -7,6 +7,11 @@ echo -e "\nSentinel shutting down"
 exit 0
 }
 
+MONITOR_NAME=${MONITOR_NAME:-"Default-Sentinel"}
+ALERT_THRESHOLD=${ALERT_THRESHOLD:-10}
+INTERVAL=${INTERVAL:-5}
+
+
 trap cleanup SIGINT SIGTERM
 
 
